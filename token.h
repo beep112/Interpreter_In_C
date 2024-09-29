@@ -29,4 +29,5 @@ typedef struct {
 
 token_t *next_token(lexer_t *lexer);
 token_t *init_token(tokentype sym, char *literal);
+char *token_type_to_string(tokentype type);
 void free_token(token_t *token);
