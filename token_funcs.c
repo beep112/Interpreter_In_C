@@ -1,5 +1,5 @@
-#include "token.h"
 #include "lexer.h"
+#include "token.h"
 
 token_t *next_token(lexer_t *lexer) {
   token_t *token = NULL;
@@ -48,3 +48,5 @@ token_t *init_token(tokentype sym, char *lit) {
 }
 
 void free_token(token_t *token) { free(token); }
+
+char *token_type_to_string(tokentype type) {}

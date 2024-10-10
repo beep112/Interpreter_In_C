@@ -3,14 +3,17 @@
 
 // allocates the memory for one lexer type
 lexer_t *init(char *input) {
-  lexer_t *l = malloc(sizeof(lexer_t));
-  l->input = input;
-  l->position = -1;
-  l->readPosition = -1;
-  l->ch = '\0';
-  read_char(l);
+  if (input != NULL) {
+    lexer_t *l = malloc(sizeof(lexer_t));
+    l->input = input;
+    l->position = 0;
+    l->readPosition = 0;
+    l->ch = input[0];
+    read_char(l);
+    return l;
+  }
 
-  return l;
+  return NULL;
 }
 
 void free_lexer(lexer_t *l) { free(l); }
